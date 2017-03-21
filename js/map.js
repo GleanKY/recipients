@@ -92,8 +92,9 @@ legend.onAdd = function (map) {
     //type = ['Office', 'Recipient', 'Source'];
     //labels = ['GleanKY Office', 'Gleaning Recipient', 'Gleaning Source'];
 
-	type = ['Source'];
-    labels = ['Gleaning Source'];
+ 	type = ['Recipient'];
+    labels = ['Gleaning Recipient'];
+	
     for (var i = 0; i < type.length; i++) {
         div.innerHTML +=
             '<i class="circle" style="background:' + setColor(type[i]) + '"></i> ' +
