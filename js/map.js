@@ -47,7 +47,7 @@ function highlightFeature(e) {
 
 
 //get geoJSON and put it on the map
-$.getJSON("data/map.geojson",function(data){
+$.getJSON("data/recipients.geojson",function(data){
 	// Create data layer
 	sitePoints = L.geoJson(data, {
 		pointToLayer: function (feature, latlng) {
@@ -62,10 +62,11 @@ $.getJSON("data/map.geojson",function(data){
 		        click: function populate(e) {
 		        document.getElementById('poptext').innerHTML = "<h2>"+props.organization+"</h2>"+
 		        "<dl>"+
-			        props.address+"<br>"+props.city+", "+props.state+" "+props.zipcode+
+			        props.address+"<br>"+props.city+", "+props.state+" "+props.zipcode+"<br>"+
 			        // "<dt>"+"Contact: "+"</dt><dd>"+props.contact+"<br>"+props.email+"<br>"+props.phone+"</dd>"+
-			        // "<dt>"+"Hours of Operation: "+"</dt><dd>"+props.hours+"</dd>"+
-			        // "<dt>"+"Storage Capacity: "+"</dt><dd>"+props.storage_cap+"</dd>"+
+			         "<dt>"+"Feeding Program: "+"</dt><dd>"+props.feeding_program+"</dd>"+
+			         "<dt>"+"Target Recipients: "+"</dt><dd>"+props.target+"</dd>"+
+			        // "<dt>"+"Target Recipients: "+"</dt><dd>"+props.target+"</dd>"+
 			        // "<dt>"+"Type of Program: "+"</dt><dd>"+props.program_type+"</dd>"+
 			        // "<dt>"+"Food Education Offered: "+"</dt><dd>"+props.food_ed+"</dd>"+
 			        // "<dt>"+"Regular Gleaning Donation: "+"</dt><dd>"+props.reg_donation+"</dd>"+
